@@ -1,24 +1,26 @@
-li t0,7
-li t1,8
-li t3,0
-li t4,0
+.data
+A: .word 7
+B: .word 10
+
+.text
+lw t0,A
+lw t1,B
 
 blt t0,t1 branch
-add t4,t0,t3 
-mv a0,t4
-
+addi t3,t0,0
+mv a0,t3
 li a7,1
 ecall
 
 li a7,10
 ecall
 
-branch: 
-add t4,t1,t3
-
-mv a0,t4
+branch:
+    addi t3,t1,0
+    mv a0,t3
 li a7,1
 ecall
 
 li a7,10
 ecall
+    
